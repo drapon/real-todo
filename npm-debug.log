@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'express',
+1 verbose cli   'ioredis',
+1 verbose cli   'socket.io',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink /usr/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'express', null ]
+7 verbose cache add name=undefined spec="express" args=["express",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'express',
+8 verbose parsed url   path: 'express',
+8 verbose parsed url   href: 'express' }
+9 verbose cache add [ 'ioredis', null ]
+10 verbose cache add name=undefined spec="ioredis" args=["ioredis",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'ioredis',
+11 verbose parsed url   path: 'ioredis',
+11 verbose parsed url   href: 'ioredis' }
+12 verbose cache add [ 'socket.io', null ]
+13 verbose cache add name=undefined spec="socket.io" args=["socket.io",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'socket.io',
+14 verbose parsed url   path: 'socket.io',
+14 verbose parsed url   href: 'socket.io' }
+15 silly lockFile ef2a209b-ioredis ioredis
+16 verbose lock ioredis /home/vagrant/.npm/ef2a209b-ioredis.lock
+17 silly lockFile 71475bfd-socket-io socket.io
+18 verbose lock socket.io /home/vagrant/.npm/71475bfd-socket-io.lock
+19 silly lockFile ef2a209b-ioredis ioredis
+20 error Error: Attempt to unlock ioredis, which hasn't been locked
+20 error     at unlock (/usr/lib/node_modules/npm/lib/utils/locker.js:44:11)
+20 error     at cb (/usr/lib/node_modules/npm/lib/cache/add-local.js:30:5)
+20 error     at /usr/lib/node_modules/npm/lib/cache/add-local.js:47:20
+20 error     at /usr/lib/node_modules/npm/lib/utils/locker.js:30:7
+20 error     at cb (/usr/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+20 error     at /usr/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+20 error     at Object.oncomplete (fs.js:107:15)
+21 error If you need help, you may report this *entire* log,
+21 error including the npm and node versions, at:
+21 error     <http://github.com/npm/npm/issues>
+22 error System Linux 3.16.0-23-generic
+23 error command "/usr/bin/node" "/usr/bin/npm" "install" "express" "ioredis" "socket.io" "--save"
+24 error cwd /home/vagrant/Develop/camera
+25 error node -v v0.10.33
+26 error npm -v 1.4.28
+27 verbose exit [ 1, true ]

@@ -9,7 +9,10 @@
         "laravel/framework": "5.1.*",
         "barryvdh/laravel-debugbar": "~2.0",
         "pusher/pusher-php-server": "2.2.1",
-        "predis/predis": "^1.1@dev"
+        "predis/predis": "^1.1@dev",
+        "illuminate/html": "5.0.*",
+        "aws/aws-sdk-php-laravel": "2.*",
+        "intervention/image": "~2.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

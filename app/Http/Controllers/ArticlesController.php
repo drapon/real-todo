@@ -115,4 +115,12 @@ class ArticlesController extends Controller {
         return redirect()->to('/');
 	}
 
+  public function draft(Request $request)
+  {
+    if(Request::ajax()) {
+      $data = Input::all();
+      print_r($data);die;
+    }
+  }
+
 }

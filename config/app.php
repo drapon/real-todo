@@ -144,6 +144,15 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Html\HtmlServiceProvider::class,
+        Illuminate\Mail\MailServiceProvider::class,
+
+        Aws\Laravel\AwsServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
@@ -192,6 +201,16 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'File'      => Illuminate\Support\Facades\File::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'Hash'      => Illuminate\Support\Facades\Hash::class,
+        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'Input'     => Illuminate\Support\Facades\Input::class,
+
+        'AWS'       => Aws\Laravel\AwsFacade::class,
+
+        'Image'     => Intervention\Image\Facades\Image::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

@@ -14,16 +14,27 @@
 
 
     <link rel="stylesheet" href="{{ asset('/css/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
 
 
   </head>
   <body>
     <div class="container">
             <div class="dropzone" id="dropzoneFileUpload">
+              <div class="grid js-masonry"
+                data-masonry-options='{ "itemSelector": ".grid-item", "columnWidth": 300 }'>
+                @foreach($photos as $photo)
+                <div class="grid-item"><img src="{{url('uploads/thumbnail',$photo->img_name)}}"></div>
+                @endforeach
+              </div>
+
             </div>
     </div>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+    <script src="{{ asset('/js/jquery.infinitescroll.js') }}"></script>
     <script src="{{ asset('/js/dropzone.js') }}"></script>
     <script type="text/javascript">
             var baseUrl = "{{ url('/photos') }}";
@@ -55,6 +66,29 @@
                 console.log(message.data.id);
                 console.log(message.data.img_name);
             });
+        </script>
+        <script>
+        var grid = document.querySelector('.grid');
+        var msnry = new Masonry( grid, {
+        // options...
+        itemSelector: '.grid-item',
+        columnWidth: 300,
+        gutterWidth: 20,
+        });
+        (function(){
+            var loading_options = {
+                finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
+                msgText: "<div class='center'>Loading news items...</div>",
+                img: "/assets/img/ajax-loader.gif"
+            };
+
+            $('div.grid').infinitescroll({
+              loading : loading_options,
+              navSelector : ".pagination",
+              nextSelector : ".pagination li.active + li a",
+              itemSelector : "div.grid div.grid-item"
+            });
+        })();
         </script>
   </body>
 </html>

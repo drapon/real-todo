@@ -34,8 +34,10 @@ class PhotosController extends Controller
 
     public function index()
     {
-        $id = Photo::all();
-        return view('photo.index');
+        $photos = Photo::orderBy('id', 'desc')->paginate(10);
+
+        return view('photo.index')
+        ->with('photos',$photos);
     }
 
     public function uploadFiles()

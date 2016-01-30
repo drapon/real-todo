@@ -27,7 +27,7 @@
                 <div class="grid-item"><img src="{{url('uploads/thumbnail',$photo->img_name)}}"></div>
                 @endforeach
               </div>
-
+              {!! $photos->render() !!}
             </div>
     </div>
 
@@ -68,27 +68,57 @@
             });
         </script>
         <script>
-        var grid = document.querySelector('.grid');
-        var msnry = new Masonry( grid, {
-        // options...
-        itemSelector: '.grid-item',
-        columnWidth: 300,
-        gutterWidth: 20,
-        });
+
         (function(){
+
+            var grid = document.querySelector('.grid');
+            var msnry = new Masonry( grid, {
+            // options...
+            itemSelector: '.grid-item',
+            columnWidth: 300,
+            gutterWidth: 20,
+            });
+
             var loading_options = {
                 finishedMsg: "<div class='end-msg'>Congratulations! You've reached the end of the internet</div>",
                 msgText: "<div class='center'>Loading news items...</div>",
-                img: "/assets/img/ajax-loader.gif"
+                img: "/images/ajax-loader.gif"
             };
-
             $('div.grid').infinitescroll({
               loading : loading_options,
-              navSelector : ".pagination",
-              nextSelector : ".pagination li.active + li a",
+              navSelector : "div.container .pagination",
+              nextSelector : "div.container .pagination li.active + li a",
               itemSelector : "div.grid div.grid-item"
             });
+          	// $container.imagesLoaded(function(){
+          	// 	$container.masonry({
+          	// 		itemSelector: '.grid-item',
+          	// 		isFitWidth: true,
+          	// 		isAnimated: true,
+          	// 		isResizable: true
+          	// 	});
+          	// });
+          	// $container.infinitescroll({
+          	// 	navSelector  : 'div.container .pagination',
+          	// 	nextSelector : 'div.container .pagination li.active + li a',
+          	// 	itemSelector : 'div.grid div.grid-item',
+          	// 	animate:true,
+          	// 	extraScrollPx: -200,
+          	// 	loading: {
+          	// 		finishedMsg: '終わりです！',
+          	// 		img: '/images/ajax-loader.gif'
+          	// 	}
+          	// },
+          	// function( newElements ) {
+          	// 	var $newElems = $( newElements );
+          	// 	// $newElems.imagesLoaded(function(){
+          	// 	// 	$container.masonry( 'appended', $newElems, true );
+          	// 	// });
+          	// });
+
         })();
+
+
         </script>
   </body>
 </html>
